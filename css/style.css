@@ -770,7 +770,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.resent__element, .case__element {
+.resent__element, .case__element, .prices__element {
   width: 7px;
   height: 7px;
   background-color: #e74c3c;
@@ -779,7 +779,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   margin: 20px auto 0;
 }
 
-.resent__element::before, .case__element::before, .resent__element::after, .case__element::after {
+.resent__element::before, .case__element::before, .prices__element::before, .resent__element::after, .case__element::after, .prices__element::after {
   content: '';
   position: absolute;
   display: block;
@@ -790,11 +790,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   transform: translateY(-1px);
 }
 
-.resent__element::after, .case__element::after {
+.resent__element::after, .case__element::after, .prices__element::after {
   right: -90px;
 }
 
-.resent__element::before, .case__element::before {
+.resent__element::before, .case__element::before, .prices__element::before {
   left: -90px;
 }
 
@@ -1013,7 +1013,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   margin-bottom: 50px;
 }
 
-.case-item__btn {
+.case-item__btn, .prices__btn {
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   height: 46px;
@@ -1066,9 +1066,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 .counter {
   background: url("../images/parallax.jpg") no-repeat center/cover fixed;
-  padding: 155px 0 140px 0;
+  padding: 155px 0 90px 0;
   position: relative;
-  margin-bottom: 2000px;
 }
 
 .counter::after {
@@ -1128,4 +1127,148 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
   font-weight: 400;
   margin-top: 5px;
   text-align: center;
+}
+
+@media (max-width: 900px) {
+  .counter__body {
+    flex-wrap: wrap;
+  }
+  .counter__item {
+    flex-basis: 50%;
+    margin-bottom: 50px;
+  }
+  .counter__item:last-child {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .counter__item {
+    flex-basis: 100%;
+  }
+}
+
+.prices {
+  margin-top: 150px;
+  margin-bottom: 120px;
+}
+
+.prices__body {
+  margin-top: 65px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prices__item {
+  background-color: #f4f5f9;
+  flex: 0 1 32.33%;
+  color: #ffffff;
+  padding: 0 0 50px 0;
+  margin-bottom: 20px;
+}
+
+.prices__item:hover .prices__top, .prices__item:hover .prices__btn {
+  background-color: #e74c3c;
+  transition: 0.2s ease all;
+}
+
+.prices__item:hover .prices__dollar {
+  color: #e74c3c;
+  transition: 0.2s ease all;
+}
+
+.prices__top {
+  width: 100%;
+  background-color: #999999;
+  text-align: center;
+  padding: 40px 0 130px 0;
+  transition: 0.2s ease all;
+}
+
+.prices__title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.prices__price {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 142px;
+  height: 142px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  border: 10px solid rgba(176, 176, 177, 0.25);
+  margin: -86px auto 0 auto;
+}
+
+.prices__dollar {
+  color: #999999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 700;
+  font-size: 39px;
+  transition: 0.2s ease all;
+}
+
+.prices__dollar span {
+  display: block;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 7px;
+  color: #999999;
+}
+
+.prices__list {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  margin: 40px 0 47px 0;
+  font-weight: 600;
+}
+
+.prices__list li {
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.prices__list li:last-child {
+  margin-bottom: 0;
+}
+
+.prices__list a {
+  color: #999999;
+  text-decoration: none;
+}
+
+.prices__button {
+  display: flex;
+  justify-content: center;
+}
+
+.prices__btn {
+  background-color: #999999;
+  transition: 0.2s ease all;
+}
+
+@media (max-width: 950px) {
+  .prices__body {
+    flex-wrap: wrap;
+  }
+  .prices__item {
+    flex-basis: 49%;
+  }
+  .prices__item:last-child {
+    margin: 0 auto 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .prices__item {
+    flex-basis: 100%;
+  }
 }
